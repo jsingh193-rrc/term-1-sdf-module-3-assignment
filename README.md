@@ -12,3 +12,7 @@ In this project I am demonstrating my understanding of:
 ## Author
 
 Jashandeep Singh
+
+## ATM Simulator
+
+This program intends to simulate the features of an ATM (Automatic Teller Machine) so that the user can simulate depositing and withdrawing money from their account.
