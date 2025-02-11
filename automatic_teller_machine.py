@@ -58,5 +58,8 @@ while show_display:
             print(stars_string.center(MAX_WIDTH, FILL_CHARACTER))
             show_display = False
         else:
+            print("\n", stars_string.center(MAX_WIDTH, FILL_CHARACTER))
             print("INSUFFICIENT FUNDS!")
+            print(stars_string.center(MAX_WIDTH, FILL_CHARACTER))
+            show_display = False
 
