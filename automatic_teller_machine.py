@@ -47,7 +47,9 @@ while show_display:
         print("\n", stars_string.center(MAX_WIDTH, FILL_CHARACTER))
         print(f"Your current balance is: {user_balance:,.2f}".center(MAX_WIDTH, FILL_CHARACTER))
         print(stars_string.center(MAX_WIDTH, FILL_CHARACTER))
-        show_display = False
+        time.sleep(3)
+        os.system('cls' if os.name == 'nt' else 'clear')
+        # show_display = False
     elif selection == "W":
         transaction_amount = float(input("Enter the transaction amount: "))
         if user_balance >= transaction_amount:
@@ -56,10 +58,14 @@ while show_display:
             print("\n", stars_string.center(MAX_WIDTH, FILL_CHARACTER))
             print(f"Your current balance is: {user_balance:,.2f}".center(MAX_WIDTH, FILL_CHARACTER))
             print(stars_string.center(MAX_WIDTH, FILL_CHARACTER))
-            show_display = False
+            time.sleep(3)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            # show_display = False
         else:
             print("\n", stars_string.center(MAX_WIDTH, FILL_CHARACTER))
             print("INSUFFICIENT FUNDS!")
             print(stars_string.center(MAX_WIDTH, FILL_CHARACTER))
-            show_display = False
+            time.sleep(3)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            # show_display = False
 
