@@ -45,3 +45,9 @@ with open(filename, "w", newline='') as csvfile:
 
     for account_number, balance in customer_balances.items():
         writer.writerow({'Account': account_number, 'Balance': balance})
+        
+print("Updated balance amount from csv:")
+with open(filename, 'r') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        print(row)
