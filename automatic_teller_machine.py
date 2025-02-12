@@ -16,7 +16,6 @@ menu_options = ["D", "W", "Q"]
 
 user_balance = random.randint(-1000, 10000)
 stars_string = "****************************************"
-# print(user_balance)
 
 show_display = True
 
@@ -37,35 +36,29 @@ while show_display:
         print("\n", stars_string.center(MAX_WIDTH, FILL_CHARACTER))
         print("INVALID SELECTION".center(MAX_WIDTH, FILL_CHARACTER))
         print(stars_string)
-        time.sleep(3)
-        os.system('cls' if os.name == 'nt' else 'clear')
     elif selection == "Q":
         show_display = False
     elif selection == "D":
         transaction_amount = float(input("Enter the transaction amount: "))
         user_balance += transaction_amount
-        print("\n", stars_string.center(MAX_WIDTH, FILL_CHARACTER))
+        print()
+        print(stars_string.center(MAX_WIDTH, FILL_CHARACTER))
         print(f"Your current balance is: {user_balance:,.2f}".center(MAX_WIDTH, FILL_CHARACTER))
         print(stars_string.center(MAX_WIDTH, FILL_CHARACTER))
-        time.sleep(3)
-        os.system('cls' if os.name == 'nt' else 'clear')
-        # show_display = False
     elif selection == "W":
         transaction_amount = float(input("Enter the transaction amount: "))
         if user_balance >= transaction_amount:
             user_balance -= transaction_amount
-            
-            print("\n", stars_string.center(MAX_WIDTH, FILL_CHARACTER))
+            print()
+            print(stars_string.center(MAX_WIDTH, FILL_CHARACTER))
             print(f"Your current balance is: {user_balance:,.2f}".center(MAX_WIDTH, FILL_CHARACTER))
             print(stars_string.center(MAX_WIDTH, FILL_CHARACTER))
-            time.sleep(3)
-            os.system('cls' if os.name == 'nt' else 'clear')
-            # show_display = False
         else:
-            print("\n", stars_string.center(MAX_WIDTH, FILL_CHARACTER))
+            print()
+            print(stars_string.center(MAX_WIDTH, FILL_CHARACTER))
             print("INSUFFICIENT FUNDS!")
             print(stars_string.center(MAX_WIDTH, FILL_CHARACTER))
-            time.sleep(3)
-            os.system('cls' if os.name == 'nt' else 'clear')
-            # show_display = False
 
+        # Wait for 3 seconds and clear display.
+    time.sleep(3)
+    os.system('cls' if os.name == 'nt' else 'clear')
