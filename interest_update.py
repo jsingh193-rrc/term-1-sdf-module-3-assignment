@@ -1,4 +1,7 @@
-"""Documentation"""
+"""This programs mainly uses File input and output along with loops and
+basic mathematical operations to make a system which updates the 
+users' accounts with interest depending on their current balances.
+"""
 
 __author__ = "Jashandeep Singh"
 __version__ = "1.0.0"
@@ -45,7 +48,7 @@ with open(filename, "w", newline='') as csvfile:
 
     for account_number, balance in customer_balances.items():
         writer.writerow({'Account': account_number, 'Balance': balance})
-        
+
 print("Updated balance amount from csv:")
 with open(filename, 'r') as csvfile:
     reader = csv.DictReader(csvfile)
