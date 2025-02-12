@@ -12,16 +12,13 @@ customer_balances = {
 
 file = open("account_balances.txt", "r")
 
-with open('account_balances.txt', 'r') as file:
-    reader = csv.DictReader(file)
-    with open("account_balances.txt", "r") as file:
-        for line in file:
-            account_number, balance = line.strip().split("|")
-            customer_balances[account_number] = float(balance)
+
+with open("account_balances.txt", "r") as file:
+    for line in file:
+        account_number, balance = line.strip().split("|")
+        customer_balances[account_number] = float(balance)
 
 pprint.pprint(customer_balances)
-
-interest_earned = {}
 
 for account, balance in customer_balances.items():
     if balance < 0:
@@ -33,8 +30,18 @@ for account, balance in customer_balances.items():
     else:
         interest_rate = 0.05
 
-    interest_amount = (balance * interest_rate) / 12
+    balance += ((balance * interest_rate) / 12)
+    customer_balances[account] = balance
 
-    interest_earned[account] = interest_rate
+print("Update the balance balance after adding interest")
+pprint.pprint(customer_balances)
 
-pprint.pprint(interest_earned)
+filename = 'updated_balances_JS.csv'
+with open(filename, "w", newline='') as csvfile:
+    fieldnames = ['Account', 'Balance']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    writer.writeheader()
+
+    for account_number, balance in customer_balances.items():
+        writer.writerow({'Account': account_number, 'Balance': balance})
