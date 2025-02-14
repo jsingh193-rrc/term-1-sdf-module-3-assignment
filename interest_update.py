@@ -10,11 +10,10 @@ import csv
 import pprint
 
 customer_balances = {
-
+    
 }
 
 file = open("account_balances.txt", "r")
-
 
 with open("account_balances.txt", "r") as file:
     for line in file:
@@ -40,14 +39,10 @@ print("Update the balance balance after adding interest")
 pprint.pprint(customer_balances)
 
 filename = 'updated_balances_JS.csv'
-with open(filename, "w", newline='') as csvfile:
-    fieldnames = ['Account', 'Balance']
-    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-
-    writer.writeheader()
-
+with open(filename, "w", newline= "") as file:
+    file.write("Account, Balance\n")
     for account_number, balance in customer_balances.items():
-        writer.writerow({'Account': account_number, 'Balance': balance})
+        file.write(f"{account_number}, {balance}\n")
 
 print("Updated balance amount from csv:")
 with open(filename, 'r') as csvfile:
